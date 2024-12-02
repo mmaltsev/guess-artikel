@@ -1,47 +1,35 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page>
+    <SwipeCard :cards="cards" @swipe="onSwipe" />
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+import SwipeCard from 'components/SwipeCard.vue';
+import germanNouns from '../assets/german_nouns.json';
+const NUMBER_OF_NOUNS = 2000;
 
 defineOptions({
   name: 'IndexPage'
 });
 
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
+const randomIndInit = Math.floor(Math.random() * NUMBER_OF_NOUNS);
+const cards = ref([germanNouns[randomIndInit]])
 
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+const onSwipe = () => {
+  cards.value.shift()
+  setTimeout(() => {
+    cards.value.push(pickRandomWords(1)[0])
+  }, 100);
+}
+
+const pickRandomWords = (numberOfWords: number) => {
+  let randomWords = [];
+  for (let i = 0; i < numberOfWords; i++) {
+    const randomInd = Math.floor(Math.random() * NUMBER_OF_NOUNS);
+    randomWords.push(germanNouns[randomInd]);
+  }
+  return randomWords;
+}
 </script>

@@ -1,0 +1,232 @@
+[
+    {
+        "id": "0",
+        "text": "According to Duden, approximately 46% of German nouns are feminine, 34% are masculine and 20% are neuter.",
+        "type": "general"
+    },
+    {
+        "id": "1",
+        "text": "All German nouns formed by adding the suffix -ung to a verb are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "2",
+        "text": "Most nouns with an unstressed ending -e are feminine. Careful: There are exceptions for masculine and neutral!",
+        "type": "feminine"
+    },
+    {
+        "id": "3",
+        "text": "Most names of fruits in German are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "4",
+        "text": "Most names of flowers in German are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "5",
+        "text": "Most names of trees in German are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "6",
+        "text": "Cardinal numbers in German are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "7",
+        "text": "Feminine occupations add the ending -in and always stay feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "8",
+        "text": "Most nouns with the ending -ei are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "9",
+        "text": "Most nouns with the ending -heit are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "10",
+        "text": "Most nouns with the ending -ie are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "11",
+        "text": "Most nouns with the ending -ik are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "12",
+        "text": "Most nouns with the ending -ion are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "13",
+        "text": "Most nouns with the ending -ität are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "14",
+        "text": "Most nouns with the ending -keit are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "15",
+        "text": "Most nouns with the ending -schaft are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "16",
+        "text": "Most nouns with the ending -ur are feminine.",
+        "type": "feminine"
+    },
+    {
+        "id": "17",
+        "text": "Over 65% of one-syllable words in German are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "18",
+        "text": "Most nouns with the ending -ant are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "19",
+        "text": "Most nouns with the ending -ent are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "20",
+        "text": "Most nouns with the ending -ich are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "21",
+        "text": "Most nouns with the ending -ismus are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "22",
+        "text": "Most nouns with the ending -ist are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "23",
+        "text": "Most nouns with the ending -ling are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "24",
+        "text": "Most nouns with the ending -or are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "25",
+        "text": "Occupations with the ending -er or -eur are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "26",
+        "text": "Names of seasons are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "27",
+        "text": "Names of months are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "28",
+        "text": "Names of days are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "29",
+        "text": "Map and compass directions are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "30",
+        "text": "Names of cars and trains are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "31",
+        "text": "Most currencies are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "32",
+        "text": "All diminutive German nouns with the ending -chen or -lein are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "33",
+        "text": "Most nouns with the ending -ma are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "34",
+        "text": "Most nouns with the ending -ment are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "35",
+        "text": "Most nouns with the ending -nis are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "36",
+        "text": "Most nouns with the ending -tel are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "37",
+        "text": "Most nouns with the ending -tum are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "38",
+        "text": "Most nouns with the ending -um are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "39",
+        "text": "Most nouns with the ending -ig (except for numbers) are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "40",
+        "text": "Most nouns with the ending -ast are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "41",
+        "text": "Names of colors in German are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "42",
+        "text": "Most metals and units in German are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "43",
+        "text": "Nouns which stem from verb infinitives in -en are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "44",
+        "text": "Most nouns with the prefix Ge- are neuter.",
+        "type": "neuter"
+    },
+    {
+        "id": "45",
+        "text": "Most nouns with the ending -enz are feminine.",
+        "type": "feminine"
+    }
+]

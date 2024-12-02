@@ -1,21 +1,20 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+    <q-header>
+      <q-toolbar flat class="bg-white row justify-between q-px-md">
         <q-btn
           flat
           dense
           round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
+          icon="account_circle"
+          color="indigo"
+          size="lg"
+          aria-label="Account"
+          @click="toggleAccount"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn size="md" rounded unelevated color="indigo" no-caps>
+          Advanced
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -25,10 +24,8 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
+        <q-item-label header>
+          Try PRO account
         </q-item-label>
 
         <EssentialLink
@@ -100,7 +97,7 @@ const linksList: EssentialLinkProps[] = [
 
 const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer () {
+function toggleAccount () {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
