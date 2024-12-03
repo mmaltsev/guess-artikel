@@ -1,10 +1,12 @@
 <template>
   <q-page>
-    Placeholder
+    <Profile />
   </q-page>
 </template>
 
 <script setup lang="ts">
+import Profile from 'components/Profile.vue';
+
 defineOptions({
   name: 'ProfilePage'
 });

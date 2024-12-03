@@ -52,15 +52,6 @@
             @click="handleGoogleLogin"
             :loading="loading"
           />
-
-          <!-- Logout Button (conditional) -->
-          <q-btn 
-            v-if="user" 
-            @click="handleLogout" 
-            label="Logout" 
-            color="negative" 
-            class="full-width"
-          />
         </q-form>
 
         <!-- Back to Signup -->
