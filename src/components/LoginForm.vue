@@ -44,7 +44,7 @@
           <q-btn 
             label="Login with Google" 
             color="white" 
-            icon="img:~assets/google-icon.svg" 
+            icon="img:@assets/google-icon.svg" 
             class="full-width q-my-sm"
             text-color="primary"
             unelevated
