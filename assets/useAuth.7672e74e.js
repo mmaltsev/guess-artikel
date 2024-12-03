@@ -1,1 +1,0 @@
-import{i as o,a1 as i,a2 as s,a3 as e,a4 as r,a5 as u,a6 as c}from"./index.6117fdb5.js";const n=o(null);i(s,a=>{n.value=a});const g=async(a,t)=>{await createUserWithEmailAndPassword(s,a,t)},l=async(a,t)=>{await e(s,a,t)},h=async()=>{await r(s,c)},d=async()=>{await u(s)};function m(){return{user:n,login:l,register:g,loginWithGoogle:h,logout:d}}export{m as u};
