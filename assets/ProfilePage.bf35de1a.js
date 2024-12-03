@@ -1,0 +1,1 @@
+import{Q as a}from"./QPage.bf1cd2c4.js";import{d as o,o as t,e as r,w as n,g as s}from"./index.0f8b43a0.js";const i=o({name:"ProfilePage",__name:"ProfilePage",setup(l){return(f,e)=>(t(),r(a,null,{default:n(()=>e[0]||(e[0]=[s(" Placeholder ")])),_:1}))}});export{i as default};
