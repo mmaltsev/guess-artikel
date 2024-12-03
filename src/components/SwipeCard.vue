@@ -124,7 +124,9 @@ const autoAnimation = (x1, y1, x2, y2) => {
 const actionEnd = (isCorrect) => {
   $q.notify({
     message: isCorrect ? 'Well done! :)' : 'Wrong :/ Try again!',
-    color: isCorrect ? 'positive' : 'negative'
+    color: isCorrect ? 'positive' : 'negative',
+    position: 'top',
+    badgeColor: 'indigo'
   })
 }
 
