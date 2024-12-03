@@ -36,7 +36,6 @@ export default route(function (/* { store, ssrContext } */) {
 
   Router.beforeEach((to, from, next) => {
     const currentUser = auth.currentUser;
-    console.log('meta', currentUser, to.meta.requiresAuth)
     if (to.meta.requiresAuth && !currentUser) {
       next('/login');
     } else {
