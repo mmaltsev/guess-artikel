@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <Profile />
+    <ProfileInfo />
   </q-page>
 </template>
 
 <script setup lang="ts">
-import Profile from 'components/Profile.vue';
+import ProfileInfo from 'components/ProfileInfo.vue';
 
 defineOptions({
   name: 'ProfilePage'
