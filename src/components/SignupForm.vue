@@ -57,7 +57,7 @@
         <q-btn 
           label="Sign Up with Google" 
           color="white" 
-          icon="img:src/assets/google-icon.svg" 
+          :icon="'img:'+googleIcon"
           class="full-width q-my-sm"
           text-color="primary"
           unelevated
@@ -76,85 +76,70 @@
           @click="goToLogin"
         />
       </q-card-section>
-
-      <!-- Error Message -->
-      <q-card-section v-if="error" class="text-negative text-center">
-        {{ error }}
-      </q-card-section>
     </q-card>
   </q-page>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
+import { useQuasar } from 'quasar'
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
+import googleIcon from '../assets/google-icon.svg';
 
-export default {
-  setup() {
-    const { register, loginWithGoogle } = useAuth();
-    const router = useRouter();
+const $q = useQuasar();
+const { register, loginWithGoogle } = useAuth();
+const router = useRouter();
 
-    const email = ref('');
-    const password = ref('');
-    const confirmPassword = ref('');
-    const loading = ref(false);
-    const error = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+const loading = ref(false);
 
-    const handleSignUp = async () => {
-      try {
-        loading.value = true;
-        error.value = '';
+const handleSignUp = async () => {
+  try {
+    loading.value = true;
 
-        // Validate password match
-        if (password.value !== confirmPassword.value) {
-          throw new Error('Passwords do not match');
-        }
+    // Validate password match
+    if (password.value !== confirmPassword.value) {
+      throw new Error('Passwords do not match');
+    }
 
-        await register(email.value, password.value);
-        alert('Please verify your email! Redirecting to login...');
-        router.push('/login');
-      } catch (err) {
-        error.value = err.message;
-      } finally {
-        loading.value = false;
-      }
-    };
+    await register(email.value, password.value);
+    alert('Please verify your email! Redirecting to login...');
+    router.push('/login');
+  } catch (err) {
+    $q.notify({
+      message: 'Couldn\'t sign up. Please try again.',
+      color: 'negative',
+      position: 'top',
+    })
+  } finally {
+    loading.value = false;
+  }
+};
 
-    const handleGoogleSignUp = async () => {
-      try {
-        loading.value = true;
-        error.value = '';
-        await loginWithGoogle();
-        alert('Account created successfully! Redirecting to main page...');
-        router.push('/');
-      } catch (err) {
-        error.value = err.message;
-      } finally {
-        loading.value = false;
-      }
-    };
+const handleGoogleSignUp = async () => {
+  try {
+    loading.value = true;
+    await loginWithGoogle();
+    alert('Account created successfully! Redirecting to main page...');
+    router.push('/');
+  } catch (err) {
+    $q.notify({
+      message: 'Couldn\'t sign up. Please try again.',
+      color: 'negative',
+      position: 'top',
+    })
+  } finally {
+    loading.value = false;
+  }
+};
 
-    const goToLogin = () => {
-      router.push('/login');
-    };
-
-    return {
-      email,
-      password,
-      confirmPassword,
-      handleSignUp,
-      handleGoogleSignUp,
-      goToLogin,
-      loading,
-      error,
-    };
-  },
+const goToLogin = () => {
+  router.push('/login');
 };
 </script>
 
 <style scoped>
-.q-page {
-  background: var(--q-color-grey-1); /* Adjust background color as desired */
-}
 </style>

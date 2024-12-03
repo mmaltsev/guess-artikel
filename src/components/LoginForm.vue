@@ -65,77 +65,60 @@
         />
 
       </q-card-section>
-
-      <!-- Error Message -->
-      <q-card-section v-if="error" class="text-negative text-center">
-        {{ error }}
-      </q-card-section>
     </q-card>
   </q-page>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
+import { useQuasar } from 'quasar'
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
 import googleIcon from '../assets/google-icon.svg';
 
-export default {
-  setup() {
-    const { user, login, loginWithGoogle, logout } = useAuth();
-    const router = useRouter();
-    const email = ref('');
-    const password = ref('');
-    const loading = ref(false);
-    const error = ref('');
+const $q = useQuasar();
+const { login, loginWithGoogle } = useAuth();
+const router = useRouter();
+const email = ref('');
+const password = ref('');
+const loading = ref(false);
 
-    const handleLogin = async () => {
-      try {
-        loading.value = true;
-        error.value = '';
-        await login(email.value, password.value);
-      } catch (err) {
-        error.value = err.message;
-      } finally {
-        loading.value = false;
-      }
-    };
+const handleLogin = async () => {
+  try {
+    loading.value = true;
+    await login(email.value, password.value);
+  } catch (err) {
+    $q.notify({
+      message: 'Couldn\'t login. Please verify your email and password.',
+      color: 'negative',
+      position: 'top',
+    })
+  } finally {
+    loading.value = false;
+  }
+};
 
-    const handleGoogleLogin = async () => {
-      try {
-        loading.value = true;
-        error.value = '';
-        await loginWithGoogle();
-        alert('Account created successfully! Redirecting to main page...');
-        router.push('/');
-      } catch (err) {
-        error.value = err.message;
-      } finally {
-        loading.value = false;
-      }
-    };
+const handleGoogleLogin = async () => {
+  try {
+    loading.value = true;
+    await loginWithGoogle();
+    alert('Logged in successfully! Redirecting to main page...');
+    router.push('/');
+  } catch (err) {
+    $q.notify({
+      message: 'Couldn\'t login. Please verify your email and password.',
+      color: 'negative',
+      position: 'top',
+    })
+  } finally {
+    loading.value = false;
+  }
+};
 
-    const handleLogout = async () => {
-      try {
-        loading.value = true;
-        await logout();
-      } finally {
-        loading.value = false;
-      }
-    };
-
-    const goToSignup = () => {
-      router.push('/signup');
-    };
-
-    return { email, password, user, handleLogin, handleGoogleLogin, handleLogout, loading, error, goToSignup, googleIcon };
-  },
+const goToSignup = () => {
+  router.push('/signup');
 };
 </script>
 
 <style scoped>
-/* Add any additional styles for mobile responsiveness, if necessary */
-.q-page {
-  background: var(--q-color-grey-1); /* Adjust background color as desired */
-}
 </style>
