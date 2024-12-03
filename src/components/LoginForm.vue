@@ -44,7 +44,7 @@
           <q-btn 
             label="Login with Google" 
             color="white" 
-            icon="img:@assets/google-icon.svg" 
+            :icon="'img:'+googleIcon"
             class="full-width q-my-sm"
             text-color="primary"
             unelevated
@@ -78,6 +78,7 @@
 import { ref } from 'vue';
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
+import googleIcon from '../assets/google-icon.svg';
 
 export default {
   setup() {
@@ -127,7 +128,7 @@ export default {
       router.push('/signup');
     };
 
-    return { email, password, user, handleLogin, handleGoogleLogin, handleLogout, loading, error, goToSignup };
+    return { email, password, user, handleLogin, handleGoogleLogin, handleLogout, loading, error, goToSignup, googleIcon };
   },
 };
 </script>
