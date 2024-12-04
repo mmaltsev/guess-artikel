@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { auth, googleProvider} from '../../firebase';
-import { onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { onAuthStateChanged, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 
 const user = ref(null);
 
@@ -11,7 +11,9 @@ onAuthStateChanged(auth, (currentUser) => {
 
 // Email/Password Registration
 const register = async (email, password) => {
-  await createUserWithEmailAndPassword(auth, email, password);
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const user = userCredential.user;
+  await sendEmailVerification(user);
 };
 
 // Email/Password Sign In function
