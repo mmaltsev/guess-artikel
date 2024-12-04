@@ -5,7 +5,7 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
-import { auth } from '../../firebase';
+import { waitForAuth } from './auth-helper'
 
 import routes from './routes';
 
@@ -34,10 +34,12 @@ export default route(function (/* { store, ssrContext } */) {
   });
 
 
-  Router.beforeEach((to, from, next) => {
-    const currentUser = auth.currentUser;
+  Router.beforeEach(async (to, from, next) => {
+    const currentUser = await waitForAuth();
     if (to.meta.requiresAuth && !currentUser) {
       next('/login');
+    } else if ((to.path === '/login' || to.path === '/signup') && currentUser) {
+      next('/profile');
     } else {
       next();
     }
