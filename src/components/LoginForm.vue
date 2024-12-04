@@ -113,7 +113,6 @@ const handleGoogleLogin = async () => {
   try {
     loading.value = true;
     await loginWithGoogle();
-    alert('Logged in successfully! Redirecting to main page...');
     router.push('/');
   } catch (err) {
     $q.notify({

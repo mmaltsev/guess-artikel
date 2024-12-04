@@ -140,7 +140,6 @@ const handleGoogleSignUp = async () => {
   try {
     loading.value = true;
     await loginWithGoogle();
-    alert('Account created successfully! Redirecting to main page...');
     router.push('/');
   } catch (err) {
     $q.notify({
