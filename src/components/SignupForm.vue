@@ -23,25 +23,43 @@
           <q-input 
             v-model="password" 
             label="Password" 
-            type="password" 
+            :type="isFirstPwd ? 'password' : 'text'"
             outlined 
             dense 
             class="q-mb-sm" 
             placeholder="Enter a password"
-            :rules="[val => !!val || 'Password is required']"
-          />
+            autocomplete="on"
+            :rules="[val => !!val && val.length >= 6 || 'Password needs to be at least 6 characters']"
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isFirstPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isFirstPwd = !isFirstPwd"
+            />
+          </template>
+        </q-input>
 
           <!-- Confirm Password Input -->
           <q-input 
             v-model="confirmPassword" 
             label="Confirm Password" 
-            type="password" 
+            :type="isSecondPwd ? 'password' : 'text'" 
             outlined 
             dense 
             class="q-mb-sm" 
             placeholder="Confirm your password"
+            autocomplete="on"
             :rules="[val => val === password || 'Passwords must match']"
-          />
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isSecondPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isSecondPwd = !isSecondPwd"
+            />
+          </template>
+        </q-input>
 
           <!-- Sign-Up Button -->
           <q-btn 
@@ -95,18 +113,17 @@ const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
 const loading = ref(false);
+const isFirstPwd = ref(true);
+const isSecondPwd = ref(true);
 
 const handleSignUp = async () => {
   try {
     loading.value = true;
-
     // Validate password match
     if (password.value !== confirmPassword.value) {
       throw new Error('Passwords do not match');
     }
-
     await register(email.value, password.value);
-    alert('Please verify your email! Redirecting to login...');
     router.push('/login');
   } catch (err) {
     $q.notify({

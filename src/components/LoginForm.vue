@@ -23,13 +23,22 @@
           <q-input 
             v-model="password" 
             label="Password" 
-            type="password" 
+            :type="isPwd ? 'password' : 'text'" 
             outlined 
             dense 
             class="q-mb-sm" 
             placeholder="Enter your password"
+            autocomplete="on"
             :rules="[val => !!val || 'Password is required']"
-          />
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
+        </q-input>
 
           <!-- Login Button -->
           <q-btn 
@@ -82,11 +91,13 @@ const router = useRouter();
 const email = ref('');
 const password = ref('');
 const loading = ref(false);
+const isPwd = ref(true);
 
 const handleLogin = async () => {
   try {
     loading.value = true;
     await login(email.value, password.value);
+    router.push('/');
   } catch (err) {
     $q.notify({
       message: 'Couldn\'t login. Please verify your email and password.',
