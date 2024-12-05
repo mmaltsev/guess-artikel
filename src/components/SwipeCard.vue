@@ -37,7 +37,13 @@
         </q-expansion-item>
       </q-card-section>
       <q-card-section>
-        <div class="text-h3 text-center break-word">{{ currentCard.word }}</div>
+        <div class="break-word text-h3 text-center">{{ currentCard.word }}</div>
+        <div style="margin: 50px 0 -50px 0; text-align: center;">
+          <q-btn v-if="hideTranslation" unelevated rounded dense no-caps color="white" class="text-grey q-px-md" @click="hideTranslation = false">
+            Show translation
+          </q-btn>
+          <div v-else class="translation text-indigo" @click="hideTranslation = true">{{ currentCard.englishTranslation }}</div>
+        </div>
       </q-card-section>
       <q-card-actions align="center" class="justify-around">
         <ArticleButton article="die" color="primary" @click="dieClicked()" />
@@ -68,6 +74,7 @@ const emit = defineEmits(['swipe'])
 const currentIndex = ref(0)
 const currentCard = computed(() => props.cards[currentIndex.value] || null)
 const currentTip = computed(() => tips[currentCard.value.tipId]?.text || undefined)
+const hideTranslation = ref(true)
 
 const swipeDirection = ref(null)
 const swipePercentage = ref(0)
@@ -91,7 +98,10 @@ const handlePan = ({ offset, isFinal }) => {
   if (isFinal) {
     if (Math.abs(swipePercentage.value) > threshold) {
       actionEnd(isCorrect())
-      if (isCorrect()) emit('swipe')
+      if (isCorrect()) {
+        emit('swipe')
+        hideTranslation.value = true
+      }
     }
     swipePercentage.value = 0
     rotationAngle.value = 0
@@ -220,5 +230,10 @@ const isCorrect = () => {
   position: absolute;
   width: 63vw;
   border-radius: 30px;
+}
+
+.translation {
+  padding: 2.5px 0;
+  font-size: 1.3em;
 }
 </style>
