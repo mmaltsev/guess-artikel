@@ -12,8 +12,8 @@
           aria-label="Account"
           @click="toggleAccount"
         />
-        <q-btn size="md" rounded unelevated color="indigo" no-caps>
-          PRO ⭐
+        <q-btn size="md" color="indigo" class="q-mt-sm" rounded unelevated no-caps>
+          Advanced ⭐
         </q-btn>
       </q-toolbar>
     </q-header>
