@@ -5432,8 +5432,8 @@
 	{
 		"englishTranslation": "Robin",
 		"word": "Rotkehlchen",
-		"article": "Der",
-		"tipId": ""
+		"article": "Das",
+		"tipId": "32"
 	},
 	{
 		"englishTranslation": "Justice",
@@ -7586,8 +7586,8 @@
 	{
 		"englishTranslation": "Maid",
 		"word": "Dienstmädchen",
-		"article": "Die",
-		"tipId": ""
+		"article": "Das",
+		"tipId": "32"
 	},
 	{
 		"englishTranslation": "Relative",
