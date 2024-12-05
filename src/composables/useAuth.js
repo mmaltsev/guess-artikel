@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { auth, googleProvider} from '../../firebase';
-import { onAuthStateChanged, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { onAuthStateChanged, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, sendPasswordResetEmail } from 'firebase/auth';
 
 const user = ref(null);
 
@@ -31,6 +31,10 @@ const logout = async () => {
   await signOut(auth);
 };
 
+const passwordReset = async (email) => {
+  await sendPasswordResetEmail(auth, email);
+}
+
 export function useAuth() {
-  return { user, login, register, loginWithGoogle, logout };
+  return { user, login, register, loginWithGoogle, logout, passwordReset };
 }

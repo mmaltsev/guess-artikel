@@ -25,8 +25,7 @@
             label="Password" 
             :type="isPwd ? 'password' : 'text'" 
             outlined 
-            dense 
-            class="q-mb-sm" 
+            dense
             placeholder="Enter your password"
             autocomplete="on"
             :rules="[val => !!val || 'Password is required']"
@@ -39,6 +38,15 @@
             />
           </template>
         </q-input>
+        <q-btn
+          flat
+          dense
+          label="Forgot Password?"
+          class="text-indigo q-mb-sm"
+          style="float: right; margin-top: -12px;"
+          no-caps
+          @click="goToPwdReset"
+        />
 
           <!-- Login Button -->
           <q-btn 
@@ -127,6 +135,10 @@ const handleGoogleLogin = async () => {
 
 const goToSignup = () => {
   router.push('/signup');
+};
+
+const goToPwdReset = () => {
+  router.push('/reset-password');
 };
 </script>
 
