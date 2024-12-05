@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header>
+    <q-header class="header-container">
       <q-toolbar flat class="bg-white row justify-between q-px-md">
         <q-btn
           flat
@@ -37,3 +37,10 @@ function toggleAccount () {
   router.push('/profile');
 }
 </script>
+<style scoped>
+.header-container {
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto;
+}
+</style>
