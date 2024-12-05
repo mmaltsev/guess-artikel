@@ -37,7 +37,7 @@ export default route(function (/* { store, ssrContext } */) {
   Router.beforeEach(async (to, from, next) => {
     const currentUser = await waitForAuth();
     if (to.meta.requiresAuth && !currentUser) {
-      next('/login');
+      next('/signup');
     } else if ((to.path === '/login' || to.path === '/signup') && currentUser) {
       next('/profile');
     } else {

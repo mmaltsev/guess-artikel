@@ -6,7 +6,7 @@
           flat
           dense
           round
-          icon="account_circle"
+          icon="settings_suggest"
           color="indigo"
           size="lg"
           aria-label="Account"
