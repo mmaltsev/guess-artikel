@@ -229,7 +229,9 @@ const isCorrect = () => {
 .tip-expansion {
   position: absolute;
   width: 63vw;
+  max-width: 335px;
   border-radius: 30px;
+  z-index: 1;
 }
 
 .translation {
