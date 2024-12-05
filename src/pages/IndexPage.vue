@@ -7,8 +7,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import SwipeCard from 'components/SwipeCard.vue';
-import germanNouns from '../assets/german_nouns.json';
-const NUMBER_OF_NOUNS = 2000;
+import germanNouns from '../assets/german_nouns_200.json';
+const NUMBER_OF_NOUNS = 200;
 
 defineOptions({
   name: 'IndexPage'

@@ -3,10 +3,10 @@
     <q-card
       class="swipe-card card-skeleton flex column justify-between q-pa-md"
     >
-      <div></div>
-      <div class="text-skeleton">
+      <q-card-section></q-card-section>
+      <q-card-section class="text-skeleton">
         <q-skeleton type="QToolbar" animation="none" />
-      </div>
+      </q-card-section>
       <q-card-actions align="center" class="actions-skeleton justify-around">
         <ArticleButton article="die" color="primary" @click="noop()" />
         <ArticleButton article="das" color="secondary" @click="noop()" />
@@ -20,7 +20,21 @@
       v-touch-pan.prevent.mouse="handlePan"
     >
       <q-card-section>
-        Tip
+        <q-expansion-item
+          v-if="currentTip"
+          dense
+          class="tip-expansion shadow-1 overflow-hidden"
+          icon="lightbulb"
+          label="Tip"
+          header-class="bg-warning text-white"
+          expand-icon-class="text-white"
+        >
+          <q-card>
+            <q-card-section>
+              {{ currentTip }}
+            </q-card-section>
+          </q-card>
+        </q-expansion-item>
       </q-card-section>
       <q-card-section>
         <div class="text-h3 text-center break-word">{{ currentCard.word }}</div>
@@ -38,6 +52,7 @@
 import { ref, computed } from 'vue'
 import { useQuasar } from 'quasar'
 import ArticleButton from './ArticleButton.vue'
+import tips from '../assets/tips.json';
 
 const $q = useQuasar()
 
@@ -52,6 +67,7 @@ const emit = defineEmits(['swipe'])
 
 const currentIndex = ref(0)
 const currentCard = computed(() => props.cards[currentIndex.value] || null)
+const currentTip = computed(() => tips[currentCard.value.tipId]?.text || undefined)
 
 const swipeDirection = ref(null)
 const swipePercentage = ref(0)
@@ -198,5 +214,11 @@ const isCorrect = () => {
 
 .actions-skeleton {
   opacity: 0.6;
+}
+
+.tip-expansion {
+  position: absolute;
+  width: 63vw;
+  border-radius: 30px;
 }
 </style>
