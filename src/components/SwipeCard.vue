@@ -15,7 +15,7 @@
     </q-card>
     <q-card
       v-if="currentCard"
-      class="swipe-card flex column justify-between q-pa-md"
+      class="swipe-card flex column justify-between q-pa-md q-mb-xs"
       :style="cardStyle"
       v-touch-pan.prevent.mouse="handlePan"
     >
@@ -93,7 +93,7 @@ const cardStyle = computed(() => {
 
 const handlePan = ({ offset, isFinal }) => {
   const sensitivity = 1
-  const threshold = 150
+  const threshold = 50
 
   if (isFinal) {
     if (Math.abs(swipePercentage.value) > threshold) {

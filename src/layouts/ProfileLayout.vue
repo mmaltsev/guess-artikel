@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white header-container">
-      <q-btn flat color="indigo" @click="goToMainPage">
+      <q-btn flat color="indigo" class="q-mt-sm" @click="goToMainPage">
         <q-icon name="chevron_left"></q-icon>
         Back
       </q-btn>
