@@ -228,5 +228,25 @@
         "id": "45",
         "text": "Most nouns with the ending -enz are feminine.",
         "type": "feminine"
+    },
+    {
+        "id": "46",
+        "text": "Many words ending in -el are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "47",
+        "text": "Neuter nouns often end in -ett.",
+        "type": "masculine"
+    },
+    {
+        "id": "48",
+        "text": "Nouns which relate to male living things are masculine.",
+        "type": "masculine"
+    },
+    {
+        "id": "49",
+        "text": "Nouns which relate to female living things are generally feminine.",
+        "type": "feminine"
     }
 ]
