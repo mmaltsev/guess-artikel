@@ -3,6 +3,7 @@
     <q-header class="header-container">
       <q-toolbar flat class="bg-white row justify-between q-px-md">
         <q-btn
+          v-if="hasToolbarBtns"
           flat
           dense
           round
@@ -12,7 +13,15 @@
           aria-label="Account"
           @click="toggleAccount"
         />
-        <q-btn size="md" color="indigo" class="q-mt-sm" rounded unelevated no-caps>
+        <q-btn
+          v-if="hasToolbarBtns"
+          size="md"
+          color="indigo"
+          class="q-mt-sm"
+          rounded
+          unelevated
+          no-caps
+        >
           Advanced ⭐
         </q-btn>
       </q-toolbar>
@@ -28,6 +37,7 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+const hasToolbarBtns = false;
 
 defineOptions({
   name: 'MainLayout'
