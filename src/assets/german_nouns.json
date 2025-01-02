@@ -141,7 +141,7 @@
 		"englishTranslation": "Boy",
 		"word": "Junge",
 		"article": "Der",
-		"tipId": ""
+		"tipId": "48"
 	},
 	{
 		"englishTranslation": "Car",
@@ -405,7 +405,7 @@
 		"englishTranslation": "Wife",
 		"word": "Ehefrau",
 		"article": "Die",
-		"tipId": ""
+		"tipId": "49"
 	},
 	{
 		"englishTranslation": "Heart",
@@ -645,7 +645,7 @@
 		"englishTranslation": "Husband",
 		"word": "Ehemann",
 		"article": "Der",
-		"tipId": ""
+		"tipId": "48"
 	},
 	{
 		"englishTranslation": "Parent",
@@ -8490,12 +8490,6 @@
 		"tipId": ""
 	},
 	{
-		"englishTranslation": "Female",
-		"word": "Frau",
-		"article": "Die",
-		"tipId": ""
-	},
-	{
 		"englishTranslation": "Mayor",
 		"word": "Bürgermeister",
 		"article": "Der",
@@ -8644,12 +8638,6 @@
 		"word": "Matratze",
 		"article": "Die",
 		"tipId": "2"
-	},
-	{
-		"englishTranslation": "Male",
-		"word": "Mann",
-		"article": "Der",
-		"tipId": ""
 	},
 	{
 		"englishTranslation": "Clinic",
@@ -11301,7 +11289,7 @@
 		"englishTranslation": "Virgin",
 		"word": "Jungfrau",
 		"article": "Die",
-		"tipId": ""
+		"tipId": "49"
 	},
 	{
 		"englishTranslation": "Squirrel",
@@ -11402,12 +11390,6 @@
 	{
 		"englishTranslation": "Sunshine",
 		"word": "Sonnenschein",
-		"article": "Der",
-		"tipId": ""
-	},
-	{
-		"englishTranslation": "Lad",
-		"word": "Junge",
 		"article": "Der",
 		"tipId": ""
 	},
