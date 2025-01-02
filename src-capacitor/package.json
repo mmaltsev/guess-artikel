@@ -1,8 +1,8 @@
 {
   "name": "guess-artikel",
-  "version": "0.0.1",
-  "description": "A Quasar Project",
-  "author": "mmaltsev <d.kruz@mail.ru>",
+  "version": "0.1.0",
+  "description": "Fun way to learn German articles.",
+  "author": "Maxim Maltsev <maxim.n.maltsev@gmail.com>",
   "private": true,
   "dependencies": {
     "@capacitor/android": "^6.2.0",

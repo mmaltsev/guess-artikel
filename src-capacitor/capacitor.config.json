@@ -1,5 +1,5 @@
 {
-  "appId": "org.capacitor.quasar.app",
-  "appName": "Quasar App",
+  "appId": "org.capacitor.guess.artikel.app",
+  "appName": "Guess Artikel",
   "webDir": "www"
 }
